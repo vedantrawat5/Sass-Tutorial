@@ -1,0 +1,84 @@
+// Interpolation syntax
+// #{expression}
+
+// interpolation{
+// String concatenation
+// 10 + px -> 10px
+// margin- + $position: 20px; 
+// ☝🏻 This is the wrong syntax
+// }
+
+// .icon + $name{
+// ☝🏻 This is the wrong syntax
+// }
+
+// Example 1:
+$size:15px;
+$leftSide:left;
+$mainSize:16px;
+
+h2{
+    margin-#{$leftSide}: $size;
+    //  Used as a ☝🏻 property name
+}
+h3{
+    font-size: #{$mainSize};
+    //  Used as a ☝🏻 property value
+}
+.property-declaration{
+    $size:100px;
+    width: $size;
+    height: $size;
+    border-radius: $size * 0.5;
+}
+
+@function function-name($value){
+    @return ($value/2) + px;
+}
+
+.function{
+    width: function-name(1000);
+}
+
+$container-width:1200;
+
+@function half($width){
+    @return $width/2 + px;
+}
+
+@function one-third($width){
+    @return $width/3 + px;
+}
+
+@function one-fourth($width){
+    @return $width/4 + px;   
+}
+
+.half{
+    width: half($container-width);
+}
+.one-third{
+    width: one-third($container-width);
+}
+.one-fourth{
+    width: one-fourth($container-width);
+}
+
+.number-functions{
+    margin: abs(-10px);
+    margin: ceil(4.2);
+    margin: floor(3.1);
+    margin: round(3.67);
+    margin: max(1px, 4px, 50px);
+    margin: min(10px, 4px, 50px);
+    margin: percentage(0.25);
+    margin: comparable(2px,1px);
+    margin: comparable(2px,1em);
+    margin: comparable(2cm,1mm);
+    margin: random();
+    margin: random(10);
+    margin: random(100);
+    margin: unit(100px);
+    margin: unitless(100px);
+}
+
