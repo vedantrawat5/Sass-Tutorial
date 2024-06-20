@@ -1,0 +1,10 @@
+.string{
+    font-family: quote(quote);
+    font-family: unquote("unquote");
+    font-family: to-upper-case(to-upper-case);
+    font-family: to-lower-case(to-lower-case);
+    font-family: str-index("str index",index);
+    font-family: str-slice("str slice",2,3);
+    font-family: unique-id();
+    font-family: str-length("String Length");
+}
