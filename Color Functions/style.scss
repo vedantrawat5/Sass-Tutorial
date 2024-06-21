@@ -1,0 +1,18 @@
+$base-color:pink;
+
+.color-functions{
+    color: darken($base-color,70);
+    color: lighten($base-color, 10);
+    color: adjust-hue($base-color,60);
+    color: saturate($base-color,40);
+    color: desaturate($base-color,30);
+    color: transparentize($base-color,0.25);
+    color: mix($base-color,lightblue,50);
+
+//  It tell us how much of color is used in base color 👇🏻
+    color: red($base-color);
+    color: saturation($base-color);
+    color: lightness($base-color);
+    color: alpha($base-color);
+
+}
