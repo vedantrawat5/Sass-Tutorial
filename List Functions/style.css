@@ -1,0 +1,23 @@
+.list-function {
+  padding: 3;
+  padding: 2;
+  padding: 20px;
+  padding: 30px;
+  padding: list3;
+  padding: 10px, 2em, 30px;
+  font-family: Arial, Courier, monospace;
+  margin: 1 2 3 4 5;
+  margin: 1, 2, 3, 4, 5, 6;
+  margin: 10px 20px 30px 40px 50px 60px;
+  margin: 10px, 20px, 30px, 40px, 50px, 60px;
+  margin: 1, 2, 3, 4, 5, 6;
+  padding: 10px, 20px, 30px, 1.25rem;
+  padding: 10px 20px 30px 1rem 2rem;
+  color: red, green, blue yellow;
+  margin: 10px 40px, 20px 50px, 30px 60px;
+  width: 10px red, 20px green;
+  padding: 2;
+  padding: comma;
+  padding: space;
+  padding: false;
+}/*# sourceMappingURL=style.css.map */

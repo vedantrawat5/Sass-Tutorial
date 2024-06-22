@@ -1,0 +1,53 @@
+// Three ways to write
+// $list: 10px 20px 30px;
+$list: [10px, 20px, 30px];
+// $list: 10px, 20px, 30px;
+$list2: 40px 50px 60px;
+$color: red, green;
+
+.list-function{
+    //* Returns the length of the list 👇🏻
+    padding: length($list);
+    padding: length((width:10px, height:20px));
+
+    //* Returns the nth element in the list 👇🏻 
+    padding: nth($list, 2);
+    padding: nth($list, -1);
+    padding: nth((list1, list2 , list3), -1);
+    
+    //* Sets the nth list element to the value specified 👇🏻
+    padding: set-nth($list, 2 , 2em);
+    font-family: set-nth(('Courier New', Courier, monospace), 1 , Arial) ;
+
+    //* Appends list2 to the end of list1 👇🏻
+    margin: join(1 2 3, 4 5 );
+    margin: join((1, 2, 3), (4, 5, 6));
+    margin: join($list1: $list , $list2: $list2 , $separator: space );
+    margin: join($list1: $list , $list2: $list2 , $separator: auto );
+    margin: join((1 2 3), (4 5 6), comma);
+    
+    //* Adds a single value to the end of the list 👇🏻
+    padding: append($list, 1.25rem);
+    padding: append($list, 1rem 2rem, space);
+    color: append($color, blue yellow , auto);
+
+    //* Combines lists into a single multidimensional list 👇🏻 
+    margin: zip($list, $list2);
+    width: zip($list, $color);
+
+    //* Returns the element at the index position specified by $value 👇🏻
+    padding: index($list: $list, $value: 20px );
+
+    // This does not displays any output
+    padding: index($list: $list, $value: 50px );
+
+    //* Returns the name of the separator used in a list as a string 👇🏻
+    padding: list-separator($list);
+    padding: list-separator($list2);
+
+    //* Returns whether $list has square brackets 👇🏻
+    padding: is-bracketed(1px , 2px , 3px); //false
+    padding: is-bracketed($list); //true
+    padding: is-bracketed($list2); //false
+    padding: is-bracketed([ 2px, 4px , 8px ]); //true
+}
