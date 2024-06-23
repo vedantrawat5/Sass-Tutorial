@@ -1,0 +1,42 @@
+//SOME OF THE MAIN SELECTORS IN SCSS ARE MENTIONED BELOW 
+
+//* Returns a new selector containing a nested list 👇🏻
+$selector: selector-nest("li", "ul");
+$selector: selector-nest(".abc ,.xyz" , "p");
+$selector: selector-nest(".abc", "&:hover");
+$selector: selector-nest(".abc", "&_def");
+
+//* Returns a new selector with the second and next selectors appended to the first👇🏻
+$selector: selector-append("a", ".active");
+$selector: selector-append(".abc", "_copy");
+$selector: selector-append(".abc", "_copy , _image");
+
+//* Returns a new selector with the selector given 👇🏻
+$selector: selector-replace("a.abc", ".abc" , ".ijk");
+$selector: selector-replace("a.abc", "h1" , "h2");
+$selector: selector-replace(".data .stats", ".stats" , ".info li");
+
+//* Returns a Boolean value 👇🏻
+$selector: is-superselector("a" , "a.active");
+$selector: is-superselector("a.active" ,"a");
+$selector: is-superselector("a" , "a.nav");
+$selector: is-superselector("nav a" , "a");
+
+//* Returns a list of the individual selectors contained in $selector 👇🏻
+$selector: simple-selectors("a.header");
+
+//* Returns a new selector that matches only elements matched by both  👇🏻 
+$selector: selector-unify("a", ".active");
+$selector: selector-unify("a.active", "a.disable");
+$selector: selector-unify("a", "h1");
+$selector: selector-unify(".active a", "main a");
+
+//* Extends the $selector as @extend rule 👇🏻
+$selector: selector-extend("a.disable", "a", ".link");
+$selector: selector-extend("a.disable", "h1", "h2");
+$selector: selector-extend(".disable", "h1", "h2");
+$selector: selector-extend(".data .info", ".info", ".content nav.sidebar");
+
+#{$selector} {
+    width: 10px;
+}
